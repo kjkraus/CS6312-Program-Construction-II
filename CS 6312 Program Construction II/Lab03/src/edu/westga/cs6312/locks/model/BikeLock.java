@@ -103,16 +103,14 @@ public class BikeLock {
      *  @return true if and only if the combination values equal the displayed values
      */
     public boolean isOpen() {	
-        String lockActualCombination = "";
-        String lockDisplay = "";
+        int combinationLength = this.lockCombination.size();
+        boolean matchingCombinations = true;
         
-        for (Integer combinationDigit : this.lockCombination) {
-            lockActualCombination += combinationDigit;
+        for (int counter = 0; counter < combinationLength; counter++) {
+            if (this.lockCombination.get(counter) != this.lockDials.get(counter).getValue()) {
+        		matchingCombinations = false;
+            }
         }
-        	
-        for (Dial currentDialDigit : this.lockDials) {
-            lockDisplay += currentDialDigit.getValue();
-        }
-        return lockDisplay.equals(lockActualCombination);
+        return matchingCombinations;
     }    
 }

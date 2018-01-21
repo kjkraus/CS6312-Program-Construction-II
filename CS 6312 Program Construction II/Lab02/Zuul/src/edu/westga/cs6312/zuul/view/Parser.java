@@ -68,4 +68,20 @@ public class Parser {
             return new Command(null, word2); 
         }
     }
+    
+    /**
+     * Print out a list of valid command words
+     */
+    public void showCommands() {
+        this.commands.showAll();
+    }
+    
+    /**
+     * Produce the list of valid command words
+     * 
+     * @return  a String of valid commands
+     */
+    public String getCommands() {
+        return this.commands.getCommandList();
+    }
 }

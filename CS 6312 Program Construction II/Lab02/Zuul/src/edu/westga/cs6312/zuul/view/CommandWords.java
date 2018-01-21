@@ -17,7 +17,7 @@ package edu.westga.cs6312.zuul.view;
 public class CommandWords {
     // a constant array that holds all valid command words
     private static final String[] VALID_COMMANDS = {
-        "go", "quit", "help"
+        "go", "quit", "help", "look"
     };
 
     /**
@@ -42,5 +42,28 @@ public class CommandWords {
         }
         // if we get here, the string was not found in the commands
         return false;
+    }
+    
+    /**
+     * Print all valid commands to System.out.
+     */
+    public void showAll() {
+        for (String command : VALID_COMMANDS) {
+            System.out.print(command + "  ");
+        }
+        System.out.println();
+    }
+    
+    /**
+     * Produces a list of all valid commands
+     * 
+     * @return   commandList	A list of valid commands
+     */
+    public String getCommandList() {
+        String commandList = "";
+        for (String command : VALID_COMMANDS) {
+            commandList += (command + " ");
+        }
+        return commandList;
     }
 }

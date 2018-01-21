@@ -55,7 +55,7 @@ public class Game {
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
         
-        // initialise room exits
+        // initialize room exits
         outside.setExits(null, theatre, lab, pub);
         theatre.setExits(null, null, null, outside);
         pub.setExits(null, outside, null, null);
@@ -115,6 +115,8 @@ public class Game {
         	this.printHelp();
         } else if (commandWord.equals("go")) {
         	this.goRoom(command);
+        } else if (commandWord.equals("look")) {
+            this.look();
         } else if (commandWord.equals("quit")) {
             wantToQuit = this.quit(command);
         }
@@ -134,7 +136,8 @@ public class Game {
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        System.out.println("   go quit help");
+        //this.parser.showCommands();
+        this.parser.getCommands();
     }
 
     /** 
@@ -148,19 +151,7 @@ public class Game {
         }
 
         String direction = command.getSecondWord();
-        Room nextRoom = null;
-        if (direction.equals("north")) {
-            nextRoom = this.currentRoom.northExit;
-        }
-        if (direction.equals("east")) {
-            nextRoom = this.currentRoom.eastExit;
-        }
-        if (direction.equals("south")) {
-            nextRoom = this.currentRoom.southExit;
-        }
-        if (direction.equals("west")) {
-            nextRoom = this.currentRoom.westExit;
-        }
+        Room nextRoom = this.currentRoom.getExit(direction);
         
         if (nextRoom == null) {
             System.out.println("There is no door!");
@@ -176,23 +167,17 @@ public class Game {
      * This method displays the location information and available exits
      */
     private void printLocationInfo() {
-        System.out.println("You are " + this.currentRoom.getDescription());
-        System.out.print("Exits: ");
-    	
-        if (this.currentRoom.northExit != null) {
-    		System.out.print("north ");
-        }
-        if (this.currentRoom.eastExit != null) {
-    		System.out.print("east ");
-        }
-        if (this.currentRoom.southExit != null) {
-    		System.out.print("south ");
-        }
-        if (this.currentRoom.westExit != null) {
-    		System.out.print("west ");
-        }	
+        System.out.println(this.currentRoom.getLongDescription());
+      	
     }
-	
+    
+    /**
+     * This method implements an action for the look command
+     */
+    private void look() {
+        System.out.println(this.currentRoom.getLongDescription());
+    }
+
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.

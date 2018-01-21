@@ -1,9 +1,7 @@
 package edu.westga.cs6312.locks.testing.dial;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
-
 import edu.westga.cs6312.locks.model.Dial;
 
 class TestIncrementValue {
@@ -57,7 +55,7 @@ class TestIncrementValue {
      *  a current value of 3
      */
     @Test
-    public void testIncrementDial12TimesShouldGiveValue3() {
+    public void testIncrementDial12TimesShouldGiveValue2() {
         Dial testDial = new Dial();
         for (int count = 0; count < 12; count++) {
             testDial.increment();

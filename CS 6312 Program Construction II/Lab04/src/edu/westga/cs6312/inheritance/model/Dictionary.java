@@ -34,8 +34,6 @@ public class Dictionary extends Book {
         this.numberOfDefinitions = definitions;
     }
     
-    
-    
     @Override
     public String toString() {
     	
@@ -43,9 +41,9 @@ public class Dictionary extends Book {
     }
 
     /**
-     * Accessor for the number of definitions in the book
+     * Accessor for the number of definitions in the dictionary
      * 
-     * @return the number of definitions in the book
+     * @return the number of definitions in the dictionary
      */
     public int getDefinitions() {
         return this.numberOfDefinitions;

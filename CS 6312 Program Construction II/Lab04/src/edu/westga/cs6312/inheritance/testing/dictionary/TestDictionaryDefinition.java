@@ -15,5 +15,36 @@ class TestDictionaryDefinition {
     	Dictionary theDictionary = new Dictionary("Merriam-Webster", 5001);
     	assertEquals(10000, theDictionary.getDefinitions());
     }
-
+    
+    /**
+     * Test to get the number of definitions when the dictionary has 
+     *  10 definitions
+     */
+    @Test
+    public void testGetNumberOfDefinitionsForDictionaryWith101() {
+    	Dictionary theDictionary = new Dictionary("Old Arabic", 55, 10);
+    	assertEquals(10, theDictionary.getDefinitions());
+    }
+    
+    /**
+     * Test to set the number of definitions when the dictionary has 
+     *  129,788 definitions
+     */
+    @Test
+    public void testSetNumberOfDefinitionsForDictionaryTo129788() {
+    	Dictionary theDictionary = new Dictionary("Old English", 4999, 2000);
+    	theDictionary.setDefinitions(129788);
+    	assertEquals(129788, theDictionary.getDefinitions());
+    }
+    
+    /**
+     * Test to set the number of definitions when the dictionary has 
+     *  333 definitions
+     */
+    @Test
+    public void testSetNumberOfDefinitionsForDictionaryTo333() {
+    	Dictionary theDictionary = new Dictionary("Old Gaelic", 799, 9999);
+    	theDictionary.setDefinitions(333);
+    	assertEquals(333, theDictionary.getDefinitions());
+    }
 }

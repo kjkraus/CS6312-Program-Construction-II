@@ -16,5 +16,16 @@ class TestCreateDictionary {
     	Dictionary theDictionary = new Dictionary("Oxford Dictionary", 899);
     	assertEquals("A book named Oxford Dictionary with 899 pages and 10000 definitions", theDictionary.toString());
     }
+    
+    /**
+     * Test to see if 3-parameter constructor creates Dictionary
+     *  with title Websters Dictionary, number of pages 5701, and 
+     *  the number of definitions 54,599
+     */
+    @Test
+    public void test3ParameterConstructorShouldHaveTitleWebstersDictionaryAndPage5701And54599Definitions() {
+    	Dictionary theDictionary = new Dictionary("Websters Dictionary", 5701, 54599);
+    	assertEquals("A book named Websters Dictionary with 5701 pages and 54599 definitions", theDictionary.toString());
+    }
 
 }

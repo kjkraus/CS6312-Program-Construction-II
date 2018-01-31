@@ -23,6 +23,12 @@ public class Book {
 	
     }
     
+    /**
+     * Returns a description of the Book 
+     *  including title and pages
+     * 
+     * @return	A description of the book 
+     */
     @Override
     public String toString() {
     	return "A book named " + this.titleOfBook + " with " + this.pagesInBook + " pages";

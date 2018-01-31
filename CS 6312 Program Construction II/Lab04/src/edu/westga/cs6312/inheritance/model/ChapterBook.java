@@ -34,6 +34,12 @@ public class ChapterBook extends Book {
         this.numberOfChapters = chapters;
     }
     
+    /**
+     * Returns a description of the ChapterBook 
+     *  including title, pages, and number of chapters
+     * 
+     * @return	A description of the ChapterBook
+     */
     @Override
     public String toString() {
     	

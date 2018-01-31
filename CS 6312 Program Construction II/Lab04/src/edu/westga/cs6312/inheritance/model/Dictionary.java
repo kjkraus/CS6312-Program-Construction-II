@@ -34,6 +34,12 @@ public class Dictionary extends Book {
         this.numberOfDefinitions = definitions;
     }
     
+    /**
+     * Returns a description of the Dictionary
+     *  including title, pages, and number of definitions
+     * 
+     * @return	A description of the dictionary
+     */
     @Override
     public String toString() {
     	

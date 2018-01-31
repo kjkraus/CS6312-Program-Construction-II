@@ -21,7 +21,7 @@ class TestCreateChapterBook {
     /**
      * Test to see if 3-parameter constructor creates ChapterBook
      *  with title The Talmud, number of pages 3999, and 
-     *  the number of chapters 129
+     *  the number of chapters 1299
      */
     @Test
     public void test3ParameterConstructorShouldHaveTitleTheTalmudAndPage3999And129Chapters() {

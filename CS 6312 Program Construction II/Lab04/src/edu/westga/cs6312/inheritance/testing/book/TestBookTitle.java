@@ -42,7 +42,7 @@ class TestBookTitle {
      *  Ulysses
      */
     @Test
-    public void testGetTitleOfBookToUlysses() {
+    public void testSetTitleOfBookToUlysses() {
     	Book theBook = new Book("Don Quixote", 400);
     	theBook.setTitle("Ulysses");
     	assertEquals("Ulysses", theBook.getTitle());

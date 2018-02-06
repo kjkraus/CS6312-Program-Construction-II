@@ -19,7 +19,7 @@ public class AnimalTUI {
      */
     public AnimalTUI() {
         this.input = new Scanner(System.in);
-        ArrayList<Animal> listOfAnimals = new ArrayList<Animal>();       
+        this.listOfAnimals = new ArrayList<Animal>();       
     }
     
     /**
@@ -60,8 +60,14 @@ public class AnimalTUI {
      */
     private void listAllAnimals() {
 		System.out.println();
-		System.out.println("\tList of animals");	
-
+		
+		if (this.listOfAnimals.size() == 0) {
+		    System.out.println("\tThere are no animals in the list.");
+		} else { 
+		    for (Animal creature : this.listOfAnimals) {
+        	    System.out.println("\t" + creature);		    
+			}
+		}		
 	}
     
     /**
